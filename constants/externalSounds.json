@@ -26,7 +26,6 @@
       "duration": "0:02",
       "description": "Jarvis announces defense protocol activation",
       "originalSource": "Iron Man (2008)",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": true,
       "popularity": 99
@@ -43,7 +42,6 @@
       "duration": "0:02",
       "description": "Classic Windows shutdown sound - pure nostalgia",
       "originalSource": "Microsoft Windows",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": true,
       "popularity": 98
@@ -61,7 +59,6 @@
       "duration": "0:01",
       "description": "Pikachu's iconic sound",
       "originalSource": "Pokémon",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": true,
       "popularity": 97
@@ -78,7 +75,6 @@
       "duration": "0:01",
       "description": "Classic iPhone lock sound",
       "originalSource": "Apple iPhone",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": true,
       "popularity": 96
@@ -96,7 +92,6 @@
       "duration": "0:03",
       "description": "Iconic Harry Potter Hedwig theme",
       "originalSource": "Harry Potter",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": true,
       "popularity": 95
@@ -113,7 +108,6 @@
       "duration": "0:01",
       "description": "Tesla-themed Tron lock sound",
       "originalSource": "Tron",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": true,
       "popularity": 94
@@ -131,7 +125,6 @@
       "duration": "0:02",
       "description": "Terminator's famous 'I'll be back' quote",
       "originalSource": "Terminator",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": true,
       "popularity": 93
@@ -148,7 +141,6 @@
       "duration": "0:02",
       "description": "Formula 1 radio communication beep",
       "originalSource": "Formula 1",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 92
@@ -166,7 +158,6 @@
       "duration": "0:01",
       "description": "Classic Super Mario coin collection sound",
       "originalSource": "Super Mario Bros.",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 91
@@ -184,7 +175,6 @@
       "duration": "0:03",
       "description": "Original Super Mario Bros theme song",
       "originalSource": "Super Mario Bros.",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 90
@@ -202,7 +192,6 @@
       "duration": "0:01",
       "description": "Navi's iconic 'Hey!' sound from Zelda",
       "originalSource": "The Legend of Zelda",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 89
@@ -220,7 +209,6 @@
       "duration": "0:01",
       "description": "Sonic ring collection sound",
       "originalSource": "Sonic the Hedgehog",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 88
@@ -238,7 +226,6 @@
       "duration": "0:02",
       "description": "Iconic Darth Vader respiratory sound",
       "originalSource": "Star Wars",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 87
@@ -256,7 +243,6 @@
       "duration": "0:01",
       "description": "Star Wars lightsaber activation sound",
       "originalSource": "Star Wars",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 86
@@ -274,7 +260,6 @@
       "duration": "0:01",
       "description": "R2D2's iconic beeping and whistling sounds",
       "originalSource": "Star Wars",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 85
@@ -292,7 +277,6 @@
       "duration": "0:01",
       "description": "Star Trek door chime sound",
       "originalSource": "Star Trek",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 84
@@ -310,7 +294,6 @@
       "duration": "0:03",
       "description": "The iconic Ghostbusters theme song",
       "originalSource": "Ghostbusters",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 83
@@ -328,7 +311,6 @@
       "duration": "0:01",
       "description": "Iconic 'Dun Dun' sound from Law and Order",
       "originalSource": "Law & Order",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 82
@@ -346,7 +328,6 @@
       "duration": "0:01",
       "description": "Joey's famous 'How you doin'?' line from Friends",
       "originalSource": "Friends",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 81
@@ -364,7 +345,6 @@
       "duration": "0:01",
       "description": "Mortal Kombat 'Finish Him!' announcement",
       "originalSource": "Mortal Kombat",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 80
@@ -382,7 +362,6 @@
       "duration": "0:01",
       "description": "Mortal Kombat's 'Toasty!' announcer",
       "originalSource": "Mortal Kombat",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 79
@@ -400,7 +379,6 @@
       "duration": "0:01",
       "description": "GLaDOS says hello in Portal",
       "originalSource": "Portal",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 78
@@ -418,7 +396,6 @@
       "duration": "0:02",
       "description": "Classic Xbox achievement unlocked sound",
       "originalSource": "Xbox",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 77
@@ -436,7 +413,6 @@
       "duration": "0:02",
       "description": "Steam achievement unlocked sound",
       "originalSource": "Steam",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 76
@@ -453,7 +429,6 @@
       "duration": "0:01",
       "description": "Classic AOL Instant Messenger buddy online sound",
       "originalSource": "AOL",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 75
@@ -470,7 +445,6 @@
       "duration": "0:03",
       "description": "Iconic dial-up modem connection sound",
       "originalSource": "1990s Modems",
-      "teslaCompatible": false,
       "needsConversion": true,
       "featured": false,
       "popularity": 74
@@ -487,7 +461,6 @@
       "duration": "0:02",
       "description": "Classic Mac startup chime sound",
       "originalSource": "Apple Macintosh",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 73
@@ -504,7 +477,6 @@
       "duration": "0:02",
       "description": "Windows 98 startup 'Tada' sound",
       "originalSource": "Windows 98",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 72
@@ -522,7 +494,6 @@
       "duration": "0:02",
       "description": "Bluey intro theme tune",
       "originalSource": "Bluey",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 71
@@ -540,7 +511,6 @@
       "duration": "0:02",
       "description": "Classic Scooby Doo theme song",
       "originalSource": "Scooby Doo",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 70
@@ -558,7 +528,6 @@
       "duration": "0:01",
       "description": "Homer Simpson's iconic 'D'oh!' exclamation",
       "originalSource": "The Simpsons",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 69
@@ -576,7 +545,6 @@
       "duration": "0:01",
       "description": "Duck Hunt 'you missed' taunting sound",
       "originalSource": "Duck Hunt",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 68
@@ -594,7 +562,6 @@
       "duration": "0:03",
       "description": "Iconic Final Fantasy victory fanfare",
       "originalSource": "Final Fantasy",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 67
@@ -611,7 +578,6 @@
       "duration": "0:02",
       "description": "Loud air horn sound - use with caution!",
       "originalSource": "General",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 66
@@ -628,7 +594,6 @@
       "duration": "0:02",
       "description": "McDonald's 'I'm Lovin It' jingle",
       "originalSource": "McDonald's",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 65
@@ -645,7 +610,6 @@
       "duration": "0:01",
       "description": "Apple Pay transaction complete sound",
       "originalSource": "Apple Pay",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 64
@@ -662,7 +626,6 @@
       "duration": "0:01",
       "description": "Rivian R1T/R1S notification chirp",
       "originalSource": "Rivian",
-      "teslaCompatible": true,
       "needsConversion": false,
       "featured": false,
       "popularity": 63
