@@ -24,8 +24,26 @@ export function useAudioPlayer(): UseAudioPlayer {
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  // Cleanup on unmount
+  // Initialize audio mode and cleanup on unmount
   useEffect(() => {
+    const initAudio = async () => {
+      try {
+        await Audio.setAudioModeAsync({
+          allowsRecordingIOS: false,
+          playsInSilentModeIOS: true,
+          interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+          interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+          shouldDuckAndroid: true,
+          staysActiveInBackground: false,
+          playThroughEarpieceAndroid: false,
+        });
+      } catch (error) {
+        console.warn('Failed to set audio mode:', error);
+      }
+    };
+
+    initAudio();
+
     return () => {
       if (soundRef.current) {
         soundRef.current.unloadAsync().catch(() => {});
@@ -47,6 +65,7 @@ export function useAudioPlayer(): UseAudioPlayer {
   const playSound = async (soundId: string, uri: string) => {
     try {
       setIsLoading(true);
+      console.log('useAudioPlayer.playSound - Starting playback', { soundId, uriType: typeof uri });
 
       // Stop previous sound if playing
       if (soundRef.current && currentSoundId !== soundId) {
@@ -55,6 +74,7 @@ export function useAudioPlayer(): UseAudioPlayer {
 
       // If same sound is paused, resume
       if (currentSoundId === soundId && soundRef.current && !isPlaying) {
+        console.log('Resuming paused sound:', soundId);
         await soundRef.current.playAsync();
         setIsPlaying(true);
         setIsLoading(false);
@@ -62,9 +82,15 @@ export function useAudioPlayer(): UseAudioPlayer {
       }
 
       // Load new sound
+      console.log('Loading new sound:', soundId);
       const { sound, status } = await Audio.Sound.createAsync({ uri });
       soundRef.current = sound;
       setCurrentSoundId(soundId);
+
+      console.log('Sound loaded successfully. Status:', {
+        isLoaded: status.isLoaded,
+        duration: status.durationMillis,
+      });
 
       // Set duration when loaded
       if (status.isLoaded) {
@@ -84,6 +110,7 @@ export function useAudioPlayer(): UseAudioPlayer {
 
           // Auto-stop when finished
           if (playbackStatus.didJustFinish) {
+            console.log('Sound finished:', soundId);
             setIsPlaying(false);
             setProgress(0);
           }
@@ -91,11 +118,13 @@ export function useAudioPlayer(): UseAudioPlayer {
       });
 
       // Play the sound
+      console.log('Starting playback:', soundId);
       await sound.playAsync();
       setIsPlaying(true);
       setIsLoading(false);
+      console.log('Playback started successfully');
     } catch (error) {
-      console.warn('Error playing sound:', error);
+      console.error('Error playing sound:', error);
       setIsLoading(false);
       setIsPlaying(false);
     }

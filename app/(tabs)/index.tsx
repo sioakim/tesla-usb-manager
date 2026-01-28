@@ -54,11 +54,14 @@ export default function SoundsScreen() {
           }
           return nameMatch;
         });
+      } else if (selectedSourceId === 'builtin') {
+        // Show only bundled sounds
+        filtered = bundledSounds;
       } else if (selectedSourceId) {
         // Filter by specific source
         filtered = externalSounds.filter(s => s.sourceId === selectedSourceId);
       } else {
-        // Show all sounds
+        // Show all sounds (for now, prioritize bundled for testing)
         filtered = [...bundledSounds, ...externalSounds];
       }
 
@@ -81,11 +84,12 @@ export default function SoundsScreen() {
     }
 
     try {
-      let uri: string;
+      let uri: string | any;
 
       if ('isBuiltIn' in sound && sound.isBuiltIn) {
-        // Bundled sound - play directly
+        // Bundled sound - pass audioFile directly (can be require() result or URI string)
         uri = sound.audioFile;
+        console.log('Playing bundled sound:', sound.name, 'URI type:', typeof uri);
       } else if ('audioUrl' in sound) {
         // External sound - check if cached, otherwise download
         const externalSound = sound as ExternalSound;
@@ -102,7 +106,13 @@ export default function SoundsScreen() {
           }
         } else {
           // Download and play
-          uri = await downloadSound(externalSound);
+          try {
+            uri = await downloadSound(externalSound);
+          } catch (downloadError) {
+            console.error('Failed to download sound:', downloadError);
+            alert('Failed to download sound. Check your internet connection.');
+            return;
+          }
         }
       } else {
         return;
@@ -111,6 +121,7 @@ export default function SoundsScreen() {
       await audioPlayer.playSound(sound.id, uri);
     } catch (error) {
       console.error('Error playing sound:', error);
+      alert('Error playing sound. Please try again.');
     }
   };
 
