@@ -8,6 +8,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { AdBanner } from '@/components/AdBanner';
 
 interface GuideSection {
   id: string;
@@ -136,6 +137,36 @@ const GUIDE_SECTIONS: GuideSection[] = [
     ],
   },
   {
+    id: 'externalsounds',
+    title: 'External Sound Sources',
+    icon: 'cloud-download',
+    content: [
+      'This app includes sounds from community websites:',
+      '',
+      '🎬 Not a Tesla App',
+      '→ 50+ curated sounds from movies, TV, games, and more',
+      '→ Website: notateslaapp.com',
+      '',
+      '🎮 TeslaDeck',
+      '→ Popular sounds and community collections',
+      '→ Website: tesladeck.com',
+      '',
+      '✨ How External Sounds Work:',
+      '• Browse and preview sounds in the app',
+      '• Tap to download and cache locally for offline playback',
+      '• Downloaded sounds show a checkmark icon',
+      '• Export to your USB drive just like bundled sounds',
+      '',
+      '📱 Data & Privacy:',
+      '• Sounds are downloaded on-demand (not included in app)',
+      '• Cache is stored on your device locally',
+      '• You can clear cache anytime from settings',
+      '',
+      '🔗 Attribution: Sounds are sourced from community creators',
+      'Using this app respects their work and contributions',
+    ],
+  },
+  {
     id: 'troubleshooting',
     title: 'Troubleshooting',
     icon: 'build',
@@ -153,6 +184,11 @@ const GUIDE_SECTIONS: GuideSection[] = [
       "❓ Light show won't load",
       '→ Both .fseq and audio file must have same name',
       '→ Files must be in LightShow folder (not subfolders)',
+      '',
+      "❓ Can't download external sounds",
+      '→ Check your internet connection',
+      '→ Ensure you have enough device storage',
+      '→ Try clearing cache if storage is full',
     ],
   },
 ];
@@ -236,6 +272,9 @@ export default function GuideScreen() {
           </Text>
         </View>
       </ScrollView>
+
+      {/* Ad Banner */}
+      <AdBanner />
     </SafeAreaView>
   );
 }

@@ -9,6 +9,7 @@ import {
   Linking,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { AdBanner } from '@/components/AdBanner';
 
 interface LightShow {
   id: string;
@@ -157,6 +158,9 @@ export default function LightShowsScreen() {
           <Text style={styles.buttonText}>Export to USB</Text>
         </TouchableOpacity>
       </View>
+
+      {/* Ad Banner */}
+      <AdBanner />
     </SafeAreaView>
   );
 }

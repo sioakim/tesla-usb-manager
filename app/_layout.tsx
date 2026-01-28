@@ -32,6 +32,9 @@ export default function RootLayout() {
     if (error) throw error;
   }, [error]);
 
+  // AdMob initialization is now handled in AdBanner component
+  // to avoid import issues on web platform
+
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();

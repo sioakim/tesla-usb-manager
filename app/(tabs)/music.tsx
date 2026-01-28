@@ -8,6 +8,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { AdBanner } from '@/components/AdBanner';
 
 interface MusicFile {
   id: string;
@@ -157,6 +158,9 @@ export default function MusicScreen() {
           <Text style={styles.buttonText}>Export to USB</Text>
         </TouchableOpacity>
       </View>
+
+      {/* Ad Banner */}
+      <AdBanner />
     </SafeAreaView>
   );
 }
