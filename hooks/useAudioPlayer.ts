@@ -28,17 +28,20 @@ export function useAudioPlayer(): UseAudioPlayer {
   useEffect(() => {
     const initAudio = async () => {
       try {
-        await Audio.setAudioModeAsync({
-          allowsRecordingIOS: false,
-          playsInSilentModeIOS: true,
-          interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
-          interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
-          shouldDuckAndroid: true,
-          staysActiveInBackground: false,
-          playThroughEarpieceAndroid: false,
-        });
+        // Only set audio mode on native platforms
+        if (typeof window === 'undefined' || !window.navigator.userAgent.includes('Mozilla')) {
+          await Audio.setAudioModeAsync({
+            allowsRecordingIOS: false,
+            playsInSilentModeIOS: true,
+            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+            interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+            shouldDuckAndroid: true,
+            staysActiveInBackground: false,
+            playThroughEarpieceAndroid: false,
+          });
+        }
       } catch (error) {
-        console.warn('Failed to set audio mode:', error);
+        console.warn('Failed to set audio mode (may not be supported on this platform):', error);
       }
     };
 

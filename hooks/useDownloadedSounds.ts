@@ -45,6 +45,12 @@ export function useDownloadedSounds(): UseDownloadedSoundsReturn {
   useEffect(() => {
     const initializeCache = async () => {
       try {
+        // Skip cache initialization on web - not supported
+        if (typeof window !== 'undefined') {
+          console.log('Cache not supported on web');
+          return;
+        }
+
         await soundDownloadService.ensureCacheDirectory();
         const cached = await soundDownloadService.getCachedSounds();
 

@@ -30,6 +30,12 @@ class SoundDownloadService {
    */
   async ensureCacheDirectory(): Promise<void> {
     try {
+      // Skip cache creation on web - not supported
+      if (typeof window !== 'undefined') {
+        console.log('Cache directories not available on web');
+        return;
+      }
+
       const soundDir = await FileSystem.getInfoAsync(CACHE_DIR);
       if (!soundDir.exists) {
         await FileSystem.makeDirectoryAsync(CACHE_DIR, { intermediates: true });
@@ -48,6 +54,12 @@ class SoundDownloadService {
    * Download a sound from URL and cache it
    */
   async downloadSound(sound: ExternalSound): Promise<string> {
+    // On web, just return the URL directly (no caching possible due to browser restrictions)
+    if (typeof window !== 'undefined') {
+      console.log('Web platform: Using URL directly without caching:', sound.audioUrl);
+      return sound.audioUrl;
+    }
+
     await this.ensureCacheDirectory();
 
     const soundPath = this.getSoundCachePath(sound.id);
@@ -193,6 +205,11 @@ class SoundDownloadService {
    */
   async getCacheSize(): Promise<number> {
     try {
+      // Skip cache size on web - not supported
+      if (typeof window !== 'undefined') {
+        return 0;
+      }
+
       const dirInfo = await FileSystem.getInfoAsync(CACHE_DIR);
       if (!dirInfo.exists) return 0;
 

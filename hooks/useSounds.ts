@@ -50,14 +50,24 @@ export function useSounds(): UseSoundsReturn {
     const loadSounds = async () => {
       try {
         setIsLoading(true);
-        const allExternal = await soundCatalogService.getAllSounds();
-        setExternalSounds(allExternal);
+        setError(null);
 
-        const allCategories = await soundCatalogService.getCategories();
-        setCategories(allCategories);
+        try {
+          const allExternal = await soundCatalogService.getAllSounds();
+          setExternalSounds(allExternal);
 
-        const featured = await soundCatalogService.getFeaturedSounds();
-        setFeaturedSounds(featured);
+          const allCategories = await soundCatalogService.getCategories();
+          setCategories(allCategories);
+
+          const featured = await soundCatalogService.getFeaturedSounds();
+          setFeaturedSounds(featured);
+        } catch (catalogErr) {
+          console.warn('Failed to load external sounds catalog (bundled sounds will still work):', catalogErr);
+          // Continue with bundled sounds only - don't set error state
+          setExternalSounds([]);
+          setCategories([]);
+          setFeaturedSounds([]);
+        }
       } catch (err) {
         console.error('Failed to load sounds:', err);
         setError(err instanceof Error ? err : new Error('Failed to load sounds'));
